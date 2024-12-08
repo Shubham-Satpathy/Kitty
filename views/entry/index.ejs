@@ -1,0 +1,29 @@
+<%- include('header.ejs') %>
+<div class="container">
+  <% if(entry.length==0) {%>
+    <div class="d-flex py-5 my-5 justify-content-center">
+      <h1 class="display-5 fw-bold text-dark-emphasis">No Entries yet...</h1>
+    </div>
+  <% } %>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <% for (let c  of entry) {%>
+      <div class="col">
+        <div class="card shadow-sm p-1">
+          <div class="card-body">
+            <p class="card-text"><%= c.title%></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="/entry/<%= c._id %>"><button type="button" class="btn btn-sm btn-outline-secondary me-1">View</button></a>
+                <a href="/entry/<%= c._id %>/edit"><button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
+              </div>
+              <div>
+                <i><%= c.location %></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% } %> 
+    </div>
+  </div>
+<%- include('footer.ejs') %>

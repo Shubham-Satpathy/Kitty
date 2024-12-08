@@ -1,0 +1,23 @@
+<%- include('header.ejs') %>
+<div class="container">
+  <div class="d-flex justify-content-end">
+    <form method="post" action="/entry/<%= entry._id %>?_method=DELETE" >
+        <button type="submit" class="btn btn-danger mt-3">Delete</button>
+    </form>
+  </div>
+    <form method="post" action="/entry/<%= entry._id %>?_method=PATCH">
+          <div class="mb-3 text-light">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" name="title" value="<%= entry.title %>">
+          </div>
+          <div class="mb-3 text-light">
+            <label for="exampleFormControlTextarea1" class="form-label">Details</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="details"><%= entry.details %></textarea>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Post</button>
+          </div>     
+    </form>
+    
+</div>
+<%- include('footer.ejs') %>
