@@ -74,4 +74,4 @@ The app will be available at [http://localhost:3000](http://localhost:3000).
 ### 🔗 View the Project
 
 Check out Kitty live:
-[Click here to view the live project 🌐](https://kitty-zyr1.onrender.com/)
+[Click here to view the live project 🌐](https://kitty-zyr1.onrender.com)
