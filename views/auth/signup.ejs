@@ -1,0 +1,35 @@
+<%- include('header.ejs') %>
+<div class="container">
+  <div class="d-flex justify-content-center">
+  <div class="col-lg-6 col-sm-12">
+    <% if(message) {%>
+      <p id="message" class="p-3 bg-danger text-white"><%= message %></p>
+      <script>
+        setTimeout(()=>{
+          document.getElementById("message").remove();
+        },1000);
+      </script>
+    <%}%>
+    <form action="/user/register" method="post">
+        <div class="mb-3 text-light">
+            <label for="exampleFormControlInput1" class="form-label">Username</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Username" name="username" required>
+          </div>
+          <div class="mb-3 text-light">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Password" name="password" minlength="8" required>
+          </div>
+          <div class="row">
+            <div class="col-6">
+            <button type="submit" class="btn btn-primary mb-3">Sign Up</button>
+            </div>
+            <div class="col-6 text-end">
+              <a class="text-decoration-none" href="/">Login</a>
+            </div>
+          </div>        
+    </form>
+    </div>
+    </div>
+</div>
+
+<%- include('footer.ejs') %>
